@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <header class="header">
-
         <div class="menu container">
             <a href="#" class="logo">Taberna del androide</a>
             <input type="checkbox" id="menu"/>
@@ -22,10 +20,19 @@
                     <li><a href"#">Servicio</a></li>
                     <li><a href"#">Productos</a></li>
                     <li><a href"#">Contacto</a></li>
+                    <li><a href="#" id="view-cart">Carrito</a></li>
+                    <div id="cart-modal" style="display:none;">
+                        <div class="cart-content">
+                            <h2>Mi Carrito</h2>
+                            <div id="cart-items"></div>
+                            <div id="cart-total"></div>
+                            <button id="close-cart">Cerrar</button>
+                        </div>
+                    </div>
                 </ul>
+                
             </nav>
         </div>
-
         <div class="header-content container">
             <div class="header-txt">
                 <h1>Compra tu <span>Juego</span> <br> favorito aqui</h1>
@@ -39,160 +46,28 @@
                 </div>
             </div>
         </div>
-    </header>
-
-    <section class="popular container">
-
-        <h2>Juegos populares</h2>
-
-        <div class="popular-content">
-            <img src="img/g1.jpg" alt="">
-            <img src="img/g2.jpg" alt="">
-            <img src="img/g3.jpg" alt="">
-            <img src="img/g4.jpg" alt="">
-            <img src="img/g5.jpg" alt="">
-            <img src="img/g6.jpg" alt="">
-            <img src="img/g7.jpg" alt="">
-        </div>
-
-    </section>    
-    
+    </header>    
         <main class="product container">
-
+            <div id="product-list" style="display: none;"></div>
+            <div id="notification" style="display: none;"></div>
+            <div id="product-list"></div>
             <h2>Todos los juegos</h2>
-
             <div class="product-content">
-
-                <div class="product-1">
-                    <img src="img/l1.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Halo Reach </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-                        </div>   
-                    </div>
-                </div>
-
-                <div class="product-1">
-                    <img src="img/l2.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Free Fire </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-
-                <div class="product-1">
-                    <img src="img/l3.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Clash Royale </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l4.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Cyberpunk </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l5.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Fortnite </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l6.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Gear of War </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l7.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Crash Bandicoot Racing </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l8.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Need For Speed </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            
-                <div class="product-1">
-                    <img src="img/l9.jpg" alt="">
-                    <div class="product-txt">
-                        <h3>Battefield 1 </h3>
-                        <div class="price">
-                            <p>$500</p>
-                            <a href="#" class="btn-2">Comprar</a>
-
-                        </div>   
-                    </div>
-                </div>
-            </div>
-
         </main>
-        
         <section class="contact container">
             <div class="contact-content">
                 <h3>Deja tu nombre y email, nos contactaremos a la brevedad</h3>
-                    <form action="https://formspree.io/f/xgveypgz" method="POST">
-                        <label for="name"></label> 
-                        <input type="text" id="name" name="name" required> 
-                        <label for="email"></label> 
-                        <input type="email" id="email" name="email" required> 
-                        <button type="submit" class="btn-3">Send</button>
-                    </form>
-            </div>
+                        <form action="https://formspree.io/f/xgveypgz" method="POST" id="contact-form">
+                            <input type="text" id="name" name="nombre" required> 
+                            <input type="email" id="email" name="email" required> 
+                            <button type="submit" class="btn-3">Send</button>
+                        </form>
         </section>
-
-        
         <footer class="footer container">
             
             <div class="link">
                 <a href="#" class="logo">Taberna del androide</a>
             </div>
-
             <div class="link">
                 <ul>
                     <li><a href"#">Inicio</a></li>
@@ -201,10 +76,7 @@
                     <li><a href"#">Contacto</a></li>
                 </ul>
             </div>
-
-
         </footer>
-
-
+        <script src="script.js"></script>
 </body>
 </html>
