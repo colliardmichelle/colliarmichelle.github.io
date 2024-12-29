@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header class="header">
@@ -14,24 +15,41 @@
             <label for="menu">
                 <img src="img/menu.png" class="menu-icono" alt="menu">
             </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href"#">Inicio</a></li>
-                    <li><a href"#">Servicio</a></li>
-                    <li><a href"#">Productos</a></li>
-                    <li><a href"#">Contacto</a></li>
-                    <li><a href="#" id="view-cart">Carrito</a></li>
-                    <div id="cart-modal" style="display:none;">
-                        <div class="cart-content">
-                            <h2>Mi Carrito</h2>
-                            <div id="cart-items"></div>
-                            <div id="cart-total"></div>
-                            <button id="close-cart">Cerrar</button>
-                        </div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Servicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><hr class="dropdown-divider"></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="view-cart" class="nav-link">Carrito</a>
+                            </li>
+                        </ul>
                     </div>
-                </ul>
-                
+                </div>
             </nav>
+            <!-- Modal del carrito -->
+            <div id="cart-modal" style="display:none;">
+                <div class="cart-content">
+                    <h2>Mi Carrito</h2>
+                    <div id="cart-items"></div>
+                    <div id="cart-total"></div>
+                    <button id="close-cart">Cerrar</button>
+                </div>
+            </div>
+            
         </div>
         <div class="header-content container">
             <div class="header-txt">
