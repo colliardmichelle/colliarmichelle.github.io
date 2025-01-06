@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cartButton.addEventListener("click", () => {
         cartModal.style.display = "flex";
         renderCart();
+    });
 
     closeCartButton.addEventListener("click", () => {
         cartModal.style.display = "none";
@@ -184,5 +185,4 @@ function addToCart(product) {
     localStorage.setItem("cart", JSON.stringify(cart)); 
     alert(`"${product.name}" se ha agregado al carrito.`);
 }
-});
 });
